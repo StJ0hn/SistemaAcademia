@@ -26,7 +26,7 @@ O sistema foi estruturado para separar a definição de dados da lógica de apli
 ## Como Executar Localmente
 
 1. Clone o repositório:
-git clone https://github.com/SeuUser/sistema-academia.git
+git clone https://github.com/StJ0hn/sistema-academia.git
 
 2. Configure o ambiente virtual e instale as dependências:
 python -m venv venv
