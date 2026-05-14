@@ -1,32 +1,46 @@
 # Sistema Organizacional de Academia
 
-Este repositório contém o trabalho final da disciplina de **Fundamentos de Banco de Dados**, semestre 2025.2, do curso de Engenharia de Software da Universidade Federal do Ceará (UFC) - Campus de Russas.
+Aplicação para gerenciamento administrativo de academias, integrando lógica em Python com persistência em banco de dados relacional.
 
-## Sobre o Projeto
-O objetivo deste trabalho prático é desenvolver um sistema completo de gerenciamento de dados baseado em um banco de dados relacional. O sistema implementa operações CRUD, visões (Views), consultas avançadas e gatilhos (Triggers) utilizando **PostgreSQL** e **Python**.
+## Objetivo
+Desenvolvido como trabalho final para a disciplina de Fundamentos de Banco de Dados na Universidade Federal do Ceará (UFC). O projeto foca na implementação de um ciclo completo de desenvolvimento de banco de dados: desde a modelagem entidade-relacionamento e normalização até a automação de processos via gatilhos (triggers) e otimização de consultas por meio de visões (views).
 
-**Professor:** Robertty Costa 
+## Stack Tecnológico
+* Linguagem: Python
+* SGBD: PostgreSQL
+* Driver de Conexão: Psycopg2
+* Ferramentas de Modelagem: dbDiagram.io / draw.io
 
-## Equipe
-* **Integrante 1:** [Raquel Santos Silva] (Modelagem, Normalização e Criação do Banco)
-* **Integrante 2:** [John Miguel da Silva Fernandes] (Implementação do Sistema, Views e Consultas Avançadas)
-* **Integrante 3:** [Enzo Andrade dos Anjos] (Consultas SQL e Triggers)
+## Arquitetura e Funcionalidades Principais
+O sistema foi estruturado para separar a definição de dados da lógica de aplicação, garantindo integridade e performance:
+* Camada de Dados (SQL): Scripts DDL e DML organizados para criação de tabelas, restrições de integridade e povoamento inicial.
+* Automação via Triggers: Implementação de gatilhos para validação de regras de negócio diretamente no motor do banco de dados.
+* Consultas Avançadas e Views: Estruturação de visões para simplificar relatórios complexos e otimizar o acesso às informações mais críticas.
+* Interface de Gerenciamento: CRUD completo desenvolvido em Python para interação com as entidades do sistema (alunos, instrutores, treinos e pagamentos).
 
-## Tecnologias Utilizadas
-* **Linguagem:** Python 
-* **SGBD:** PostgreSQL
-* **Driver:** Psycopg2
-* **Modelagem:** dbDiagram.io / drawn.io 
+## Estrutura do Repositório
+* /docs: Documentação técnica contendo os modelos ER e Relacional.
+* /sql: Scripts de definição, manipulação e objetos de banco de dados (Views e Triggers).
+* /src: Código-fonte da aplicação e lógica de integração.
 
-## Estrutura do Projeto
-A organização dos diretórios segue a divisão de responsabilidades:
-* `/docs`: Documentação do Modelo ER e Relacional.
-* `/sql`: Scripts DDL (Create), DML (Insert), Views e Triggers.
-* `/src`: Código fonte da aplicação Python.
+## Como Executar Localmente
 
-## Como Executar
-1. Clone o repositório.
-2. Crie um ambiente virtual: `python -m venv venv`.
-3. Instale as dependências: `pip install -r requirements.txt`.
-4. Configure as credenciais do banco no arquivo `.env` (baseado no `.env.example`).
-5. Execute a aplicação: `python src/main.py`.
+1. Clone o repositório:
+git clone https://github.com/SeuUser/sistema-academia.git
+
+2. Configure o ambiente virtual e instale as dependências:
+python -m venv venv
+source venv/bin/activate (ou venv\Scripts\activate no Windows)
+pip install -r requirements.txt
+
+3. Configure as credenciais do PostgreSQL no arquivo `.env` seguindo o modelo do `.env.example`.
+
+4. Execute a aplicação:
+python src/main.py
+
+## Desafios Técnicos e Aprendizados
+O principal desafio do projeto foi a tradução das regras de negócio complexas para o esquema relacional, garantindo a terceira forma normal (3FN) para evitar redundâncias. Além disso, a implementação de triggers para controle de estados no banco exigiu um estudo aprofundado sobre a ordem de execução de operações e integridade referencial, consolidando os fundamentos de persistência de dados.
+
+---
+Equipe: John Miguel da Silva Fernandes, Raquel Santos Silva e Enzo Andrade dos Anjos.
+Orientação: Prof. Robertty Costa.
